@@ -1,0 +1,1202 @@
+{
+    "1": {
+        "name": "Port de Madrestam",
+        "area": "Amakna"
+    },
+    "2": {
+        "name": "La montagne des Craqueleurs",
+        "area": "Amakna"
+    },
+    "3": {
+        "name": "Le champ des Ingalsses",
+        "area": "Amakna"
+    },
+    "4": {
+        "name": "La forêt d'Amakna",
+        "area": "Amakna"
+    },
+    "5": {
+        "name": "Le coin des Bouftous",
+        "area": "Amakna"
+    },
+    "6": {
+        "name": "Le cimetière",
+        "area": "Amakna"
+    },
+    "7": {
+        "name": "Les cryptes",
+        "area": "Amakna"
+    },
+    "8": {
+        "name": "Campement des Bworks",
+        "area": "Amakna"
+    },
+    "9": {
+        "name": "La forêt maléfique",
+        "area": "Amakna"
+    },
+    "10": {
+        "name": "Le village",
+        "area": "Amakna"
+    },
+    "11": {
+        "name": "Territoire des Porcos",
+        "area": "Amakna"
+    },
+    "12": {
+        "name": "La péninsule des gelées",
+        "area": "Amakna"
+    },
+    "22": {
+        "name": "Bord de la forêt maléfique",
+        "area": "Amakna"
+    },
+    "23": {
+        "name": "La presqu'île des Dragoeufs",
+        "area": "Amakna"
+    },
+    "25": {
+        "name": "Souterrains des Wabbits",
+        "area": "L'île des Wabbits"
+    },
+    "27": {
+        "name": "Côte d'Asse",
+        "area": "Amakna"
+    },
+    "29": {
+        "name": "Souterrains",
+        "area": "Amakna"
+    },
+    "30": {
+        "name": "Le berceau",
+        "area": "Tainéla"
+    },
+    "31": {
+        "name": "Le marécage",
+        "area": "Amakna"
+    },
+    "32": {
+        "name": "Sufokia",
+        "area": "Sufokia"
+    },
+    "33": {
+        "name": "Forêt des Abraknydes",
+        "area": "Forêt des Abraknydes"
+    },
+    "34": {
+        "name": "Prison",
+        "area": "Prison"
+    },
+    "39": {
+        "name": "Repaire des roublards",
+        "area": "Amakna"
+    },
+    "43": {
+        "name": "Fortification de Bonta",
+        "area": "Bonta"
+    },
+    "44": {
+        "name": "Quartier des Boulangers",
+        "area": "Bonta"
+    },
+    "46": {
+        "name": "Quartier des Bouchers",
+        "area": "Bonta"
+    },
+    "47": {
+        "name": "Quartier des Forgerons",
+        "area": "Bonta"
+    },
+    "48": {
+        "name": "Quartier des Bûcherons",
+        "area": "Bonta"
+    },
+    "49": {
+        "name": "Quartier des Bricoleurs",
+        "area": "Bonta"
+    },
+    "50": {
+        "name": "Quartier des Tailleurs",
+        "area": "Bonta"
+    },
+    "51": {
+        "name": "Quartier des Bijoutiers",
+        "area": "Bonta"
+    },
+    "54": {
+        "name": "Massif de Cania",
+        "area": "Plaine de Cania"
+    },
+    "55": {
+        "name": "Pénates du Corbac",
+        "area": "Plaine de Cania"
+    },
+    "57": {
+        "name": "Landes de Sidimote",
+        "area": "Landes de Sidimote"
+    },
+    "61": {
+        "name": "Cimetière des Torturés",
+        "area": "Landes de Sidimote"
+    },
+    "62": {
+        "name": "Village des Dopeuls",
+        "area": "Territoire des Dopeuls"
+    },
+    "68": {
+        "name": "Les Champs de Cania",
+        "area": "Plaine de Cania"
+    },
+    "69": {
+        "name": "Bois de Litneg",
+        "area": "Plaine de Cania"
+    },
+    "71": {
+        "name": "Gisgoul, le village dévasté",
+        "area": "Landes de Sidimote"
+    },
+    "73": {
+        "name": "Égouts de Bonta",
+        "area": "Bonta"
+    },
+    "75": {
+        "name": "Égouts de Brâkmar",
+        "area": "Brâkmar"
+    },
+    "76": {
+        "name": "Village des Brigandins",
+        "area": "Village des Brigandins"
+    },
+    "77": {
+        "name": "La gelaxième dimension",
+        "area": "Amakna"
+    },
+    "78": {
+        "name": "La gelaxième dimension (royale)",
+        "area": "Amakna"
+    },
+    "82": {
+        "name": "Donjon des Bouftous",
+        "area": "Tainéla"
+    },
+    "84": {
+        "name": "Foire du Trooll",
+        "area": "Foire du Trool"
+    },
+    "92": {
+        "name": "Contour d'Astrub",
+        "area": "Astrub"
+    },
+    "93": {
+        "name": "La plage de Moon",
+        "area": "L'île de Moon"
+    },
+    "94": {
+        "name": "Donjon du Bworker",
+        "area": "Landes de Sidimote"
+    },
+    "95": {
+        "name": "Cité d'Astrub",
+        "area": "Astrub"
+    },
+    "96": {
+        "name": "Exploitation minière d'Astrub",
+        "area": "Astrub"
+    },
+    "97": {
+        "name": "Forêt d'Astrub",
+        "area": "Astrub"
+    },
+    "98": {
+        "name": "Champs d'Astrub",
+        "area": "Astrub"
+    },
+    "99": {
+        "name": "Souterrains d'Astrub",
+        "area": "Astrub"
+    },
+    "100": {
+        "name": "Souterrains profonds d'Astrub",
+        "area": "Astrub"
+    },
+    "101": {
+        "name": "Le coin des Tofus",
+        "area": "Astrub"
+    },
+    "102": {
+        "name": "Le champ du repos",
+        "area": "Astrub"
+    },
+    "103": {
+        "name": "Territoire des Bandits",
+        "area": "Amakna"
+    },
+    "152": {
+        "name": "L'île de Grobe",
+        "area": "Pandala Neutre"
+    },
+    "154": {
+        "name": "Antre du Dragon Cochon",
+        "area": "Donjon du Dragon Cochon"
+    },
+    "161": {
+        "name": "Île de la Cawotte",
+        "area": "L'île des Wabbits"
+    },
+    "162": {
+        "name": "Îlot de Waldo",
+        "area": "L'île des Wabbits"
+    },
+    "163": {
+        "name": "Îlot des Tombeaux",
+        "area": "L'île des Wabbits"
+    },
+    "164": {
+        "name": "Îlot de la Couronne",
+        "area": "L'île des Wabbits"
+    },
+    "165": {
+        "name": "La jungle profonde de Moon",
+        "area": "L'île de Moon"
+    },
+    "166": {
+        "name": "Le chemin vers Moon",
+        "area": "L'île de Moon"
+    },
+    "167": {
+        "name": "Le bateau pirate",
+        "area": "L'île de Moon"
+    },
+    "168": {
+        "name": "Forêt des Abraknydes Sombres",
+        "area": "Forêt des Abraknydes"
+    },
+    "169": {
+        "name": "Orée de la forêt des Abraknydes",
+        "area": "Forêt des Abraknydes"
+    },
+    "170": {
+        "name": "Plaine des Scarafeuilles",
+        "area": "Amakna"
+    },
+    "173": {
+        "name": "Prairies d'Astrub",
+        "area": "Astrub"
+    },
+    "175": {
+        "name": "Donjon des Abraknydes",
+        "area": "Donjon Abraknyde"
+    },
+    "178": {
+        "name": "Plaine des Porkass",
+        "area": "Plaine de Cania"
+    },
+    "179": {
+        "name": "Le coin des Boos",
+        "area": "Amakna"
+    },
+    "180": {
+        "name": "Le château d'Amakna",
+        "area": "Amakna"
+    },
+    "181": {
+        "name": "Souterrains du Château d'Amakna",
+        "area": "Amakna"
+    },
+    "182": {
+        "name": "Village des Eleveurs",
+        "area": "Montagne des Koalaks"
+    },
+    "200": {
+        "name": "Labyrinthe du Dragon Cochon",
+        "area": "Le labyrinthe du Dragon Cochon"
+    },
+    "201": {
+        "name": "Donjon des Tofus",
+        "area": "Donjon des Tofus"
+    },
+    "209": {
+        "name": "L'île du Minotoror",
+        "area": "L'île du Minotoror"
+    },
+    "210": {
+        "name": "Centre du labyrinthe du Minotoror",
+        "area": "Centre du labyrinthe du Minotoror"
+    },
+    "211": {
+        "name": "La bibliothèque du Maître Corbac",
+        "area": "Plaine de Cania"
+    },
+    "213": {
+        "name": "Donjon des Canidés",
+        "area": "Donjon des Canidés"
+    },
+    "223": {
+        "name": "Caverne du Koulosse",
+        "area": "Caverne du Koulosse"
+    },
+    "230": {
+        "name": "Cimetière primitif",
+        "area": "Montagne des Koalaks"
+    },
+    "231": {
+        "name": "Lacs enchantés",
+        "area": "Montagne des Koalaks"
+    },
+    "232": {
+        "name": "Marécages nauséabonds",
+        "area": "Montagne des Koalaks"
+    },
+    "233": {
+        "name": "Marécages sans fond",
+        "area": "Montagne des Koalaks"
+    },
+    "234": {
+        "name": "Forêt de Kaliptus",
+        "area": "Montagne des Koalaks"
+    },
+    "235": {
+        "name": "Territoire des Dragodindes Sauvages",
+        "area": "Montagne des Koalaks"
+    },
+    "236": {
+        "name": "Sanctuaire des Familiers",
+        "area": "Sanctuaire des Familiers"
+    },
+    "243": {
+        "name": "Donjon des Craqueleurs",
+        "area": "Donjon des Craqueleurs"
+    },
+    "253": {
+        "name": "Canyon sauvage",
+        "area": "Montagne des Koalaks"
+    },
+    "254": {
+        "name": "Repaire de Skeunk",
+        "area": "Montagne des Koalaks"
+    },
+    "275": {
+        "name": "Vallée de la Morh'Kitu",
+        "area": "Montagne des Koalaks"
+    },
+    "276": {
+        "name": "Campement des Gobelins",
+        "area": "Amakna"
+    },
+    "277": {
+        "name": "Village des Bworks",
+        "area": "Amakna"
+    },
+    "278": {
+        "name": "Elevage de Bouftous du Château d'Amakna",
+        "area": "Astrub"
+    },
+    "279": {
+        "name": "Pâturages de Bonta",
+        "area": "Bonta"
+    },
+    "280": {
+        "name": "Bordure de Brâkmar",
+        "area": "Brâkmar"
+    },
+    "284": {
+        "name": "Donjon des Bworks",
+        "area": "Donjon des Bworks"
+    },
+    "297": {
+        "name": "Donjon des Scarafeuilles",
+        "area": "Donjon des Scarafeuilles"
+    },
+    "306": {
+        "name": "Donjon des Champs",
+        "area": "Donjon des Champs"
+    },
+    "314": {
+        "name": "Sanctuaire des Dragoeufs",
+        "area": "Amakna"
+    },
+    "315": {
+        "name": "Village des Dragoeufs",
+        "area": "Amakna"
+    },
+    "316": {
+        "name": "Souterrains des Dragoeufs",
+        "area": "Amakna"
+    },
+    "319": {
+        "name": "Le labyrinthe du Minotoror",
+        "area": "L'île du Minotoror"
+    },
+    "320": {
+        "name": "Havre de Nowel",
+        "area": "Île de Nowel"
+    },
+    "321": {
+        "name": "Donjon de Nowel",
+        "area": "Île de Nowel"
+    },
+    "325": {
+        "name": "Donjon des Dragoeufs",
+        "area": "Donjon des Dragoeufs"
+    },
+    "334": {
+        "name": "Baie de Cania",
+        "area": "Plaine de Cania"
+    },
+    "335": {
+        "name": "Calanques d'Astrub",
+        "area": "Astrub"
+    },
+    "336": {
+        "name": "Donjon Ensablé",
+        "area": "Astrub"
+    },
+    "337": {
+        "name": "Donjon des Rats de Bonta",
+        "area": "Bonta"
+    },
+    "338": {
+        "name": "Donjon des Rats de Brâkmar",
+        "area": "Brâkmar"
+    },
+    "339": {
+        "name": "Donjon des Rats du Château d'Amakna",
+        "area": "Amakna"
+    },
+    "440": {
+        "name": "Pitons rocheux",
+        "area": "Incarnam"
+    },
+    "441": {
+        "name": "Rocher du Phénix",
+        "area": "Incarnam"
+    },
+    "442": {
+        "name": "Lac",
+        "area": "Incarnam"
+    },
+    "443": {
+        "name": "Forêt",
+        "area": "Incarnam"
+    },
+    "444": {
+        "name": "Champs",
+        "area": "Incarnam"
+    },
+    "445": {
+        "name": "Prairie",
+        "area": "Incarnam"
+    },
+    "446": {
+        "name": "Temple",
+        "area": "Incarnam"
+    },
+    "447": {
+        "name": "Donjon",
+        "area": "Incarnam"
+    },
+    "448": {
+        "name": "Taverne",
+        "area": "Incarnam"
+    },
+    "450": {
+        "name": "Sortie du Temple",
+        "area": "Incarnam"
+    },
+    "451": {
+        "name": "Ile des naufragés",
+        "area": "Île d'Otomaï"
+    },
+    "452": {
+        "name": "Mer",
+        "area": "Île d'Otomaï"
+    },
+    "453": {
+        "name": "Plage de Corail",
+        "area": "Île d'Otomaï"
+    },
+    "454": {
+        "name": "Plaines herbeuses",
+        "area": "Île d'Otomaï"
+    },
+    "455": {
+        "name": "Jungle obscure",
+        "area": "Île d'Otomaï"
+    },
+    "457": {
+        "name": "Tourbière sans fond",
+        "area": "Île d'Otomaï"
+    },
+    "459": {
+        "name": "Canopée du Kimbo",
+        "area": "Île d'Otomaï"
+    },
+    "460": {
+        "name": "Grotte Hesque",
+        "area": "Île d'Otomaï"
+    },
+    "461": {
+        "name": "L'arche d'Otomaï",
+        "area": "Île d'Otomaï"
+    },
+    "462": {
+        "name": "La clairière de Floribonde",
+        "area": "Île d'Otomaï"
+    },
+    "463": {
+        "name": "Le laboratoire du Tynril",
+        "area": "Île d'Otomaï"
+    },
+    "464": {
+        "name": "Tronc de l'arbre Hakam",
+        "area": "Île d'Otomaï"
+    },
+    "465": {
+        "name": "Le village des éleveurs",
+        "area": "Île d'Otomaï"
+    },
+    "466": {
+        "name": "Le village côtier",
+        "area": "Île d'Otomaï"
+    },
+    "467": {
+        "name": "Cimetière de l'île d'Otomaï",
+        "area": "Île d'Otomaï"
+    },
+    "468": {
+        "name": "Village des Zoths",
+        "area": "Village des Zoths"
+    },
+    "469": {
+        "name": "Village de la Canopée",
+        "area": "Île d'Otomaï"
+    },
+    "470": {
+        "name": "Goulet du Rasboul",
+        "area": "Île d'Otomaï"
+    },
+    "471": {
+        "name": "Tourbière nauséabonde",
+        "area": "Île d'Otomaï"
+    },
+    "472": {
+        "name": "Feuillage de l'arbre Hakam",
+        "area": "Île d'Otomaï"
+    },
+    "473": {
+        "name": "Le laboratoire caché",
+        "area": "Île d'Otomaï"
+    },
+    "474": {
+        "name": "Cale de l'arche d'Otomaï",
+        "area": "Île d'Otomaï"
+    },
+    "479": {
+        "name": "Rivière Kawaii",
+        "area": "Amakna"
+    },
+    "480": {
+        "name": "Montagne basse des Craqueleurs",
+        "area": "Amakna"
+    },
+    "481": {
+        "name": "Clairière de Brouce Boulgour",
+        "area": "Amakna"
+    },
+    "482": {
+        "name": "La Millifutaie",
+        "area": "Amakna"
+    },
+    "485": {
+        "name": "La campagne",
+        "area": "Amakna"
+    },
+    "488": {
+        "name": "Sous-sol de la Bibliothèque",
+        "area": "Amakna"
+    },
+    "490": {
+        "name": "Rivage du golfe sufokien",
+        "area": "Amakna"
+    },
+    "491": {
+        "name": "Donjon des Larves",
+        "area": "Amakna"
+    },
+    "492": {
+        "name": "Passage vers Brâkmar",
+        "area": "Amakna"
+    },
+    "493": {
+        "name": "Donjon des Blops",
+        "area": "Plaine de Cania"
+    },
+    "494": {
+        "name": "Donjon Fungus",
+        "area": "Landes de Sidimote"
+    },
+    "495": {
+        "name": "Caverne des Fungus",
+        "area": "Landes de Sidimote"
+    },
+    "500": {
+        "name": "Cimetière du village des Zoths",
+        "area": "Village des Zoths"
+    },
+    "502": {
+        "name": "Quartier des Bûcherons",
+        "area": "Brâkmar"
+    },
+    "503": {
+        "name": "Quartier des Bouchers",
+        "area": "Brâkmar"
+    },
+    "505": {
+        "name": "Quartier des Boulangers",
+        "area": "Brâkmar"
+    },
+    "506": {
+        "name": "Quartier des Bijoutiers",
+        "area": "Brâkmar"
+    },
+    "507": {
+        "name": "Quartier des Tailleurs",
+        "area": "Brâkmar"
+    },
+    "508": {
+        "name": "Quartier des Forgerons",
+        "area": "Brâkmar"
+    },
+    "509": {
+        "name": "Quartier des Bricoleurs",
+        "area": "Brâkmar"
+    },
+    "511": {
+        "name": "Centre-ville",
+        "area": "Brâkmar"
+    },
+    "513": {
+        "name": "Centre-ville",
+        "area": "Bonta"
+    },
+    "516": {
+        "name": "Donjon des Squelettes",
+        "area": "Amakna"
+    },
+    "517": {
+        "name": "Terres Désacrées",
+        "area": "Landes de Sidimote"
+    },
+    "522": {
+        "name": "Route de Brâkmar",
+        "area": "Plaine de Cania"
+    },
+    "524": {
+        "name": "Route de la Roche",
+        "area": "Plaine de Cania"
+    },
+    "525": {
+        "name": "Route de la Côte",
+        "area": "Plaine de Cania"
+    },
+    "526": {
+        "name": "Route Sombre",
+        "area": "Landes de Sidimote"
+    },
+    "527": {
+        "name": "Rocaille",
+        "area": "Plaine de Cania"
+    },
+    "528": {
+        "name": "Donjon des Forgerons",
+        "area": "Amakna"
+    },
+    "530": {
+        "name": "Quartier des Alchimistes",
+        "area": "Bonta"
+    },
+    "531": {
+        "name": "Quartier des Alchimistes",
+        "area": "Brâkmar"
+    },
+    "532": {
+        "name": "Quartier des Pêcheurs",
+        "area": "Bonta"
+    },
+    "533": {
+        "name": "Quartier des Éleveurs",
+        "area": "Bonta"
+    },
+    "534": {
+        "name": "Quartier des Pêcheurs",
+        "area": "Brâkmar"
+    },
+    "535": {
+        "name": "Quartier des Éleveurs",
+        "area": "Brâkmar"
+    },
+    "536": {
+        "name": "Tutoriel guidé",
+        "area": "Incarnam"
+    },
+    "537": {
+        "name": "Château du Wa Wabbit",
+        "area": "L'île des Wabbits"
+    },
+    "538": {
+        "name": "Terrier du Wa Wabbit",
+        "area": "L'île des Wabbits"
+    },
+    "541": {
+        "name": "Maison premium",
+        "area": "Plaine de Cania"
+    },
+    "600": {
+        "name": "Le port de givre",
+        "area": "Île de Frigost"
+    },
+    "601": {
+        "name": "La bourgade",
+        "area": "Île de Frigost"
+    },
+    "602": {
+        "name": "Les champs de glace",
+        "area": "Île de Frigost"
+    },
+    "603": {
+        "name": "Le village enseveli",
+        "area": "Île de Frigost"
+    },
+    "604": {
+        "name": "La forêt des pins perdus",
+        "area": "Île de Frigost"
+    },
+    "605": {
+        "name": "La forêt pétrifiée",
+        "area": "Île de Frigost"
+    },
+    "606": {
+        "name": "La crevasse Perge",
+        "area": "Île de Frigost"
+    },
+    "608": {
+        "name": "Les crocs de verre",
+        "area": "Île de Frigost"
+    },
+    "609": {
+        "name": "Le berceau d'Alma",
+        "area": "Île de Frigost"
+    },
+    "610": {
+        "name": "Les larmes d'Ouronigride",
+        "area": "Île de Frigost"
+    },
+    "611": {
+        "name": "Le Mont Torrideau",
+        "area": "Île de Frigost"
+    },
+    "615": {
+        "name": "Le lac gelé",
+        "area": "Île de Frigost"
+    },
+    "616": {
+        "name": "Entrée du château de Harebourg",
+        "area": "Île de Frigost"
+    },
+    "617": {
+        "name": "Serre du Royalmouth",
+        "area": "Île de Frigost"
+    },
+    "618": {
+        "name": "Excavation du Mansot Royal",
+        "area": "Île de Frigost"
+    },
+    "619": {
+        "name": "Epave du Grolandais violent",
+        "area": "Île de Frigost"
+    },
+    "620": {
+        "name": "Hypogée de l'Obsidiantre",
+        "area": "Île de Frigost"
+    },
+    "621": {
+        "name": "Tanière Givrefoux",
+        "area": "Île de Frigost"
+    },
+    "622": {
+        "name": "Cavernes des Givrefoux",
+        "area": "Île de Frigost"
+    },
+    "623": {
+        "name": "Antre du Korriandre",
+        "area": "Île de Frigost"
+    },
+    "624": {
+        "name": "Cavernes du Kolosso",
+        "area": "Île de Frigost"
+    },
+    "625": {
+        "name": "La mer Kantil",
+        "area": "Île de Frigost"
+    },
+    "626": {
+        "name": "Les grottes gelées",
+        "area": "Île de Frigost"
+    },
+    "650": {
+        "name": "Port de Sakaï",
+        "area": "Île de Sakaï"
+    },
+    "651": {
+        "name": "Plaine de Sakaï",
+        "area": "Île de Sakaï"
+    },
+    "652": {
+        "name": "Forêt enneigée",
+        "area": "Île de Sakaï"
+    },
+    "653": {
+        "name": "Mine abandonnée de Sakaï",
+        "area": "Île de Sakaï"
+    },
+    "700": {
+        "name": "Donjon Kanniboul",
+        "area": "L'île de Moon"
+    },
+    "702": {
+        "name": "Maison Fantôme",
+        "area": "Foire du Trool"
+    },
+    "750": {
+        "name": "Goultarminator",
+        "area": "Amakna"
+    },
+    "751": {
+        "name": "Prison des MJs",
+        "area": "Astrub"
+    },
+    "752": {
+        "name": "Antichambre des Gloursons",
+        "area": "Île de Frigost"
+    },
+    "753": {
+        "name": "Ruche des Gloursons",
+        "area": "Île de Frigost"
+    },
+    "755": {
+        "name": "Nid du Kwakwa",
+        "area": "Amakna"
+    },
+    "756": {
+        "name": "Laboratoire de Brumen Tinctorias",
+        "area": "Landes de Sidimote"
+    },
+    "757": {
+        "name": "Terre de Nowel",
+        "area": "Île de Nowel"
+    },
+    "758": {
+        "name": "Taïga de Nowel",
+        "area": "Île de Nowel"
+    },
+    "759": {
+        "name": "Caverne de Nowel",
+        "area": "Île de Nowel"
+    },
+    "760": {
+        "name": "Maison du Papa Nowel",
+        "area": "Île de Nowel"
+    },
+    "762": {
+        "name": "Village de Vulkania",
+        "area": "Archipel de Vulkania"
+    },
+    "763": {
+        "name": "Forêt d'Etraktopel",
+        "area": "Archipel de Vulkania"
+    },
+    "764": {
+        "name": "Forêt d'Espartiate",
+        "area": "Archipel de Vulkania"
+    },
+    "765": {
+        "name": "Forêt des Strates Igraphies",
+        "area": "Archipel de Vulkania"
+    },
+    "766": {
+        "name": "Forêt de Ponefarr",
+        "area": "Archipel de Vulkania"
+    },
+    "767": {
+        "name": "Cratère Pillar",
+        "area": "Archipel de Vulkania"
+    },
+    "768": {
+        "name": "Cratère Mopyle",
+        "area": "Archipel de Vulkania"
+    },
+    "769": {
+        "name": "Cratère Nehr",
+        "area": "Archipel de Vulkania"
+    },
+    "770": {
+        "name": "Cratère Monseleya",
+        "area": "Archipel de Vulkania"
+    },
+    "771": {
+        "name": "Cratère Minus",
+        "area": "Archipel de Vulkania"
+    },
+    "772": {
+        "name": "Vulkania",
+        "area": "Archipel de Vulkania"
+    },
+    "773": {
+        "name": "Lantamaï",
+        "area": "Archipel de Vulkania"
+    },
+    "774": {
+        "name": "Kohrog",
+        "area": "Archipel de Vulkania"
+    },
+    "775": {
+        "name": "Enclos Instance",
+        "area": "Amakna"
+    },
+    "776": {
+        "name": "Repaire de Daïgoro",
+        "area": "Pandala Donjon"
+    },
+    "777": {
+        "name": "Le pichon frétillant",
+        "area": "Pandala Neutre"
+    },
+    "778": {
+        "name": "Friche",
+        "area": "Incarnam"
+    },
+    "779": {
+        "name": "Territoire souterrain des Porcos",
+        "area": "Amakna"
+    },
+    "780": {
+        "name": "Tofulailler Royal",
+        "area": "Donjon des Tofus"
+    },
+    "781": {
+        "name": "Donjon du Chêne Mou",
+        "area": "Donjon Abraknyde"
+    },
+    "783": {
+        "name": "Antre du Kralamoure Géant",
+        "area": "Île d'Otomaï"
+    },
+    "784": {
+        "name": "Potager d'Halouine",
+        "area": "Amakna"
+    },
+    "785": {
+        "name": "Jardins d'Hiver",
+        "area": "Île de Frigost"
+    },
+    "786": {
+        "name": "Remparts à vent",
+        "area": "Île de Frigost"
+    },
+    "787": {
+        "name": "Tannerie Écarlate",
+        "area": "Île de Frigost"
+    },
+    "788": {
+        "name": "Bastion des froides légions",
+        "area": "Île de Frigost"
+    },
+    "789": {
+        "name": "Tour de la Clepsydre",
+        "area": "Île de Frigost"
+    },
+    "790": {
+        "name": "Laboratoire de Nileza",
+        "area": "Île de Frigost"
+    },
+    "791": {
+        "name": "Transporteur de Sylargh",
+        "area": "Île de Frigost"
+    },
+    "792": {
+        "name": "Salons privés de Klime",
+        "area": "Île de Frigost"
+    },
+    "793": {
+        "name": "Forgefroide de Missiz Frizz",
+        "area": "Île de Frigost"
+    },
+    "794": {
+        "name": "Donjon du Comte Harebourg",
+        "area": "Île de Frigost"
+    },
+    "795": {
+        "name": "Pied de la Tour de la Clepsydre",
+        "area": "Île de Frigost"
+    },
+    "796": {
+        "name": "Antre du Blop Multicolore Royal",
+        "area": "Plaine de Cania"
+    },
+    "797": {
+        "name": "Temple des alliances",
+        "area": "Sufokia"
+    },
+    "802": {
+        "name": "Plateau Rifique",
+        "area": "Îlot Rifique"
+    },
+    "803": {
+        "name": "Plages des Eaux Rifiques",
+        "area": "Îlot Rifique"
+    },
+    "804": {
+        "name": "Avant-poste des Bworks",
+        "area": "Plaine de Cania"
+    },
+    "805": {
+        "name": "Île de l'Ascension",
+        "area": "Île d'Orado"
+    },
+    "806": {
+        "name": "Hall des Valeureux",
+        "area": "Hall des Valeureux"
+    },
+    "807": {
+        "name": "Brèche mystérieuse",
+        "area": "Amakna"
+    },
+    "808": {
+        "name": "Mont Nésélite",
+        "area": "Plaine de Cania"
+    },
+    "809": {
+        "name": "Barrage Dure-Tête",
+        "area": "Plaine de Cania"
+    },
+    "810": {
+        "name": "Maelström de Shariva",
+        "area": "Amakna"
+    },
+    "812": {
+        "name": "Bayou d'Orado",
+        "area": "Île d'Orado"
+    },
+    "813": {
+        "name": "Orado plage",
+        "area": "Île d'Orado"
+    },
+    "814": {
+        "name": "Cité d'Orado",
+        "area": "Île d'Orado"
+    },
+    "815": {
+        "name": "Temple de l'Ascension",
+        "area": "Île d'Orado"
+    },
+    "816": {
+        "name": "Le village",
+        "area": "Amakna"
+    },
+    "817": {
+        "name": "Pyramide du Roi Skaille",
+        "area": "Île d'Orado"
+    },
+    "818": {
+        "name": "Frigost - Bulle temporelle",
+        "area": "Île de Frigost"
+    },
+    "819": {
+        "name": "Année 547 - Bulle Temporelle",
+        "area": "Sufokia"
+    },
+    "820": {
+        "name": "Le labyrinthe du Minotoror",
+        "area": "L'île du Minotoror"
+    },
+    "821": {
+        "name": "Plaines des Minérocs",
+        "area": "Plaine de Cania"
+    },
+    "822": {
+        "name": "Territoire des Kanigs",
+        "area": "Plaine de Cania"
+    },
+    "823": {
+        "name": "Cimetière de Bonta",
+        "area": "Plaine de Cania"
+    },
+    "824": {
+        "name": "Repaire de Kanigroula",
+        "area": "Plaine de Cania"
+    },
+    "825": {
+        "name": "La Chapelle inondée",
+        "area": "Plaine de Cania"
+    },
+    "826": {
+        "name": "Sanctuaire Minéroc",
+        "area": "Plaine de Cania"
+    },
+    "828": {
+        "name": "Forêt de Cania",
+        "area": "Plaine de Cania"
+    },
+    "829": {
+        "name": "Bulle Temporelle - Ère du Wakfu",
+        "area": "Amakna"
+    },
+    "830": {
+        "name": "Feudala",
+        "area": "Île de Pandala"
+    },
+    "831": {
+        "name": "Terrdala",
+        "area": "Île de Pandala"
+    },
+    "832": {
+        "name": "Akwadala",
+        "area": "Île de Pandala"
+    },
+    "833": {
+        "name": "Aerdala",
+        "area": "Île de Pandala"
+    },
+    "834": {
+        "name": "Plantala",
+        "area": "Île de Pandala"
+    },
+    "835": {
+        "name": "Vallée de la Dame des eaux",
+        "area": "Île de Pandala"
+    },
+    "836": {
+        "name": "Atelier du Tanukouï San",
+        "area": "Île de Pandala"
+    },
+    "838": {
+        "name": "Dojo du Vent",
+        "area": "Île de Pandala"
+    },
+    "839": {
+        "name": "Fabrique de foux d'artifice",
+        "area": "Île de Pandala"
+    },
+    "840": {
+        "name": "Village de Pandala",
+        "area": "Île de Pandala"
+    },
+    "841": {
+        "name": "Port d'Osakwa",
+        "area": "Île de Pandala"
+    },
+    "842": {
+        "name": "Pont de Pandala",
+        "area": "Île de Pandala"
+    }
+}

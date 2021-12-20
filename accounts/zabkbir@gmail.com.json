@@ -1,0 +1,39 @@
+{
+    "password": "hahowa12",
+    "config": {
+        "enabledChannels": [
+            0,
+            5,
+            6,
+            7,
+            9
+        ],
+        "proxy": {
+            "proxyString": "",
+            "enabled": false
+        },
+        "exchange": {
+            "pass": "",
+            "enabled": false
+        },
+        "speedhack": false,
+        "bank": 80,
+        "minLP": 80,
+        "antimod": true,
+        "autoSelectServer": false,
+        "server": "",
+        "autoSelectCharacter": true,
+        "character": "",
+        "autoUpgradeCharac": {},
+        "autoUpgradeSpells": {}
+    },
+    "fightConfig": {
+        "auto": true,
+        "spellsToUse": [],
+        "berserker": false,
+        "maxDistance": 12,
+        "skipTurn": false,
+        "debug": true,
+        "instructions": {}
+    }
+}

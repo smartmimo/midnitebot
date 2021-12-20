@@ -1,0 +1,54 @@
+{
+    "password": "hahowa12",
+    "config": {
+        "enabledChannels": [
+            5,
+            6,
+            7,
+            9,
+            0
+        ],
+        "proxy": {
+            "proxyString": ":",
+            "enabled": false
+        },
+        "exchange": {
+            "pass": "",
+            "enabled": false
+        },
+        "bank": 80,
+        "speedhack": true,
+        "minLP": 80,
+        "antimod": true,
+        "autoSelectServer": true,
+        "server": "",
+        "autoSelectCharacter": true,
+        "character": "",
+        "autoUpgradeCharac": {
+            "11": 11
+        },
+        "autoUpgradeSpells": {}
+    },
+    "fightConfig": {
+        "auto": false,
+        "spellsToUse": [],
+        "berserker": true,
+        "maxDistance": 12,
+        "skipTurn": false,
+        "debug": true,
+        "instructions": {
+            "11": [
+                {
+                    "spellId": 5921,
+                    "name": "Projection",
+                    "cacOnly": false,
+                    "toCellId": "enemy",
+                    "toCellIdText": "Enemie",
+                    "repeat": 2
+                }
+            ]
+        }
+    },
+    "username": "madmaden666+12@gmail.com",
+    "scriptPath": "./scripts/incarnam xp.js"
+}

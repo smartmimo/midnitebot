@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes" />
+    <script src="jquery.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="./slots/icon.png" sizes="any">
+    <title>Midnite Bot
+        <%-version%>
+    </title>
+</head>
+
+<body>
+
+
+
+    <ul id="sideMenu">
+        <div class='back'>
+            <img class='logo' alt='logo' src='./slots/logo-full.png' draggable="false">
+        </div>
+        <div class='accContainer' style='overflow-x:hidden; overflow-y: auto; position:relative; '>
+            <li class='accounts'>
+                <button class='remove'></button>
+            </li>
+            <div style='display:flex; justify-content: center; margin-bottom:10px;'>
+                <button class="add"> + </button>
+                <button class="add addFile"><i class='fa fa-file'></i></button>
+            </div>
+        </div>
+
+        <div id='rapidActions'>
+            <button class='rapidAction' onclick='connectAll()'>Connecter tous les comptes</button>
+            <button class='rapidAction' onclick='disconnectAll()'>Déconnecter tous les comptes</button>
+            <input type='file' accept=".js" id="scriptRapid" style='display:none;' onchange='loadAll()' />
+            <button class='rapidAction' onclick="$('#scriptRapid').val(null); $('#scriptRapid').click()">Charger un script</button>
+            <button class='rapidAction' onclick='startAll()'>Lancer tous les comptes</button>
+            <button class='rapidAction' onclick='stopAll()'>Arrêter tous les comptes</button>
+            <button onclick='toggleRapid(this)'>Actions rapides <i class='fa fa-chevron-up'></i></button>
+            <!--
+				--><input type="text" id="anticaptcha" onfocusout="sendToMain('SAVE_CAPTCHA', {key: $('#anticaptcha').val()})" value="<%-anticaptcha%>" placeholder="Clé anticaptcha" style='ouline:0; border:0; margin:0; padding:15px;' />
+        </div>
+
+        <script>
+            $(document).on("ready", () => {
+                $(".accContainer").css("height", "calc(100% - " + $('#rapidActions').outerHeight() + "px)")
+            })
+
+            function toggleRapid(el) {
+                if ($(el).children("i").attr("class") == "fa fa-chevron-up") {
+                    $(el).children("i").attr("class", "fa fa-chevron-down")
+                    $(".rapidAction").css("display", "block")
+                } else {
+                    $(el).children("i").attr("class", "fa fa-chevron-up")
+                    $(".rapidAction").css("display", "none")
+                }
+            }
+
+            function toggleMenu() {
+                const el = ".toggleMenu"
+                if ($(el).children("i").attr("class") == "fa fa-close") {
+                    $(el).children("i").attr("class", "fa fa-bars")
+                    $("#sideMenu").css("display", "none")
+                    $(".toggleMenu").css("left", "0")
+
+                } else {
+                    $(el).children("i").attr("class", "fa fa-close")
+                    $("#sideMenu").css("display", "block")
+                    $(".toggleMenu").css("left", "30vh")
+                }
+            }
+        </script>
+    </ul>
+
+    <div id='main'>
+        <button onclick="toggleMenu()" class='toggleMenu'><i class="fa fa-bars"></i></button>
+        <div id='header'>
+            <div class='stats'>
+                <p>CPU: <span id='cpu' style='color:var(--secondaryText); padding:1px;'><%-cpu%></span>%</p>
+                <p>MEMORY: <span id='mem' style='color:var(--secondaryText); padding:1px;'><%-ram%></span>Mb <button class='action memory' style='width:30px; height:30px; position:absolute; top :1.8em; margin-left:2px;' onclick='sendToMain("gc")'><i class='fa fa-trash'></i></button></p>
+                <p>PING: <span id='ping' style='padding:1px;'><%-ping%></span>ms</p>
+            </div>
+            <div class='center'>
+                <h1>Welcome to Midnite Bot <span id="app-version" style="color:var(--secondaryText);"><%-version%></span></h1>
+                <h2>Your everyday Dofus Touch botting client by <span style="color:var(--secondaryText);">Endless sprite#6371.</span></h2>
+            </div>
+            <div class='centerMobile'>
+                <img class='logo' alt='logo' src='./slots/logo-full-footer.png'>
+                <!--<p style="color:var(--secondaryText);"><%-version%></p>-->
+            </div>
+            <div class='versions'>
+                <p>Build Version: <span id='build' style='color:var(--secondaryText);'><%-build%></span></p>
+                <p>App Version: <span id='app' style='color:var(--secondaryText);'><%-app%></span></p>
+                <p>Assets Version: <span id='assets' style='color:var(--secondaryText);'><%-assets%></span></p>
+            </div>
+        </div>
+
+        <form id='import'>
+            <h2>Nouveau compte</h2>
+            <p class='err'></p>
+            <input type="text" id="user" placeholder="Nom de compte" />
+            <input type="password" id="pass" placeholder="Mot de passe" />
+            <select id="server">
+					<option value="">Automatique</option>
+					<option value="Herdegrize">Herdegrize</option>
+					<option value="Terra Cogita">Terra Cogita</option>
+					<option value="Oshimo">Oshimo</option>
+					<option value="Brutas">Brutas</option>
+					<option value="Grandapan">Grandapan</option>
+					<option value="Dodge">Dodge</option>
+				</select>
+            <button onclick='importAccount($("#server").val())'>Importer</button>
+        </form>
+
+        <form id='importFile'>
+            <h2>Nouveau compte</h2>
+            <p><i>Les comptes invalides ne seront pas traités.</i></p>
+            <textarea id='bulk' placeholder='account1:pass1
+account2:pass2
+account3:pass3
+account4:pass4
+account5:pass5
+account6:pass6
+				'></textarea>
+            <button onclick='importBulk($("#bulk").val())'>Importer</button>
+        </form>
+
+        <div id='partyContainer'>
+            <div id='addMember'>
+                <div>Membre à ajouter:
+                    <p id='memberToAdd' style='color:var(--secondaryText); display:inline-block;'></p>
+                </div>
+                <div>Groupe: <select style='width:auto; padding:5px;' id='partyId'></select></div>
+                <button onclick='addMember($("#partyId").val(), $("#memberToAdd").html())'>Ajouter le membre</button>
+            </div>
+            <div id='addGroup'>
+                <div>Chef:
+                    <p id='leader' style='color:var(--secondaryText); display:inline-block;'></p>
+                </div>
+                <div>Sous-fifres:
+                    <p id='slaves' style='color:var(--secondaryText); display:inline-block;'></p>
+                </div>
+                <button onclick='initParty($("#leader").html(), $("#slaves").html().split(&#39;<span style=&#34;color:var(--titles);&#34;> - </span>&#39;))'>Initialiser le groupe</button>
+            </div>
+        </div>
+        <div id='loading'>LOADING...</div>
+        <div id='favDiv' onclick='event.stopImmediatePropagation();'>
+            <p><i>Aucun script favoris</i></p>
+            <span style='font-size:0.3em; color:white; margin-left:auto;'>Ever Princess#7314</span>
+        </div>
+        <div id='container'>
+            <div id='zab' style=''>
+                <!--<h2><span id='username'></span>: <span id='state' style='color:red;  font-style:italic;'>Offline</span></h2>-->
+                <span id='username' style='display:none;'></span><span id='state' style='color:red;  font-style:italic; display:none;'>Offline</span></h2>
+                <div style='width:250px; padding:0; margin:0; position:relative; '>
+                    <form onsubmit='return liveScript($("#live").val());' style=' white-space: nowrap;'>
+                        <input type='text' placeholder='livescript' id='live' style='width:80%; padding:2px 0 2px 0; margin:0;' />
+                        <button style='width: 20%; padding:2px 0 2px 0; margin:0;'>GO</button>
+                    </form>
+                </div>
+                <h2 id='map'> - </h2>
+                <div id='loadExtended'>
+                    <button onclick="event.stopImmediatePropagation();showFavDiv(this)" class='action' disabled><i class="fa fa-star"></i></button>
+                    <button onclick="$('#script').val(null); $('#script').click()" class='action' disabled><i class="fa fa-upload"></i></button>
+                </div>
+                <div style='float:right; display:inline; text-align: center;'>
+                    <button id='fav' onclick="favoriteScripts()" class='action' disabled><i class="fa fa-star"></i></button>
+                    <input type='file' accept=".js" id="script" style='display:none;' onchange='readScript($("#username").html())' />
+                    <span id='scriptName' style='color:var(--secondaryText);'></span>
+                    <button id='load' onclick="event.stopImmediatePropagation(); showLoad(this)" class='action' disabled><i class="fa fa-code"></i></button>
+                    <button id='start' onclick='runScript($("#username").html())' class='action' disabled><i class="fa fa-play" style='margin-left:5px; color:green;'></i></button>
+                    <button id='stop' onclick='stopScript($("#username").html())' class='action' disabled><i class="fa fa-stop" style='color:red;'></i></button>
+
+                    <button class='login' style='width:150px; margin-left:10px;' onclick='login($("#username").html())'>Connexion</button>
+                </div>
+            </div>
+
+            <div id='data' class='subContainer'>
+                <button onclick="sendToMain('CLEAR_LOGS', {username: $('#username').html()})" class='action nodisabled' style='position:absolute; top:0; right:0; z-index:4;'><svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width='20' height='20' style='margin-top: 4px; margin-right:3px'><path d="m495.718 1.582c-7.456-3.691-16.421-.703-20.142 6.694l-136.92 274.08-26.818-13.433c-22.207-11.118-49.277-2.065-60.396 20.083l-6.713 13.405 160.957 80.616 6.713-13.411c11.087-22.143 2.227-49.18-20.083-60.381l-26.823-13.435 136.919-274.077c3.706-7.412.703-16.421-6.694-20.141z"/><circle cx="173" cy="497" r="15"/><circle cx="23" cy="407" r="15"/><circle cx="83" cy="437" r="15"/><path d="m113 482h-60c-8.276 0-15-6.724-15-15 0-8.291-6.709-15-15-15s-15 6.709-15 15c0 24.814 20.186 45 45 45h60c8.291 0 15-6.709 15-15s-6.709-15-15-15z"/><path d="m108.635 388.074c-6.563.82-11.807 5.845-12.92 12.349-1.113 6.519 2.153 12.993 8.057 15.952l71.675 35.889c12.935 6.475 27.231 9.053 41.177 7.573-1.641 6.65 1.479 13.784 7.852 16.992l67.061 33.589c5.636 2.78 12.169 1.8 16.685-2.197 2.347-2.091 53.436-48.056 83.3-98.718l-161.605-80.94c-36.208 48.109-120.363 59.39-121.282 59.511z"/></svg></button>
+                <div style='min-height: calc(100% - 40px); height:auto;'></div>
+            </div>
+            <div id='char' class='subContainer' style='display:none;'>
+                <div>
+                    <div style='display:inline;'>
+                        <button id='statsB' onclick="switchCharacterDiv($('#username').html(), $(this).attr('id').replace('B', ''))" class='action active' disabled><svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width='20' height='20' style='margin-top: 8px; margin-left:3px;'><path fill="currentColor" d="M.1 494.1c-1.1 9.5 6.3 17.8 15.9 17.8l32.3.1c8.1 0 14.9-5.9 16-13.9.7-4.9 1.8-11.1 3.4-18.1H380c1.6 6.9 2.9 13.2 3.5 18.1 1.1 8 7.9 14 16 13.9l32.3-.1c9.6 0 17.1-8.3 15.9-17.8-4.6-37.9-25.6-129-118.9-207.7-17.6 12.4-37.1 24.2-58.5 35.4 6.2 4.6 11.4 9.4 17 14.2H159.7c21.3-18.1 47-35.6 78.7-51.4C410.5 199.1 442.1 65.8 447.9 17.9 449 8.4 441.6.1 432 .1L399.6 0c-8.1 0-14.9 5.9-16 13.9-.7 4.9-1.8 11.1-3.4 18.1H67.8c-1.6-7-2.7-13.1-3.4-18.1-1.1-8-7.9-14-16-13.9L16.1.1C6.5.1-1 8.4.1 17.9 5.3 60.8 31.4 171.8 160 256 31.5 340.2 5.3 451.2.1 494.1zM224 219.6c-25.1-13.7-46.4-28.4-64.3-43.6h128.5c-17.8 15.2-39.1 30-64.2 43.6zM355.1 96c-5.8 10.4-12.8 21.1-21 32H114c-8.3-10.9-15.3-21.6-21-32h262.1zM92.9 416c5.8-10.4 12.8-21.1 21-32h219.4c8.3 10.9 15.4 21.6 21.2 32H92.9z"></path></svg></button>
+                        <button id='invB' onclick="switchCharacterDiv($('#username').html(), $(this).attr('id').replace('B', ''))" class='action' disabled><svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width='20' height='20' style='margin-top: 8px; margin-left:3px;'><path fill="currentColor" d="M320 320H128c-17.67 0-32 14.33-32 32v32h256v-32c0-17.67-14.33-32-32-32zM96 512h256v-96H96v96zM320 80h-8V56c0-30.88-25.12-56-56-56h-64c-30.88 0-56 25.12-56 56v24h-8C57.31 80 0 137.31 0 208v240c0 35.35 28.65 64 64 64V352c0-35.29 28.71-64 64-64h192c35.29 0 64 28.71 64 64v160c35.35 0 64-28.65 64-64V208c0-70.69-57.31-128-128-128zM184 56c0-4.41 3.59-8 8-8h64c4.41 0 8 3.59 8 8v24h-80V56zm136 144c0 4.42-3.58 8-8 8H136c-4.42 0-8-3.58-8-8v-16c0-4.42 3.58-8 8-8h176c4.42 0 8 3.58 8 8v16z"></path></svg></button>
+                        <button id='spellsB' onclick="switchCharacterDiv($('#username').html(), $(this).attr('id').replace('B', ''))" class='action' disabled><svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width='20' height='20' style='margin-top: 8px;'><path fill="currentColor" d="M80 160l26.66-53.33L160 80l-53.34-26.67L80 0 53.34 53.34 0 80l53.34 26.67L80 160zm144-64l16-32 32-16-32-16-16-32-16 32-32 16 32 16 16 32zm234.66 245.33L432 288l-26.66 53.33L352 368l53.34 26.67L432 448l26.66-53.33L512 368l-53.34-26.67zM400 192c8.84 0 16-7.16 16-16v-27.96l91.87-101.83c5.72-6.32 5.48-16.02-.55-22.05L487.84 4.69c-6.03-6.03-15.73-6.27-22.05-.55L186.6 256H144c-8.84 0-16 7.16-16 16v36.87L10.53 414.84c-13.57 12.28-14.1 33.42-1.16 46.36l41.43 41.43c12.94 12.94 34.08 12.41 46.36-1.16L376.34 192H400z"></path></svg></button>
+                        <button id='jobsB' onclick="switchCharacterDiv($('#username').html(), $(this).attr('id').replace('B', ''))" class='action' disabled><svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width='20' height='20' style='margin-top: 8px;'><path fill="currentColor" d="M501.1 395.7L384 278.6c-23.1-23.1-57.6-27.6-85.4-13.9L192 158.1V96L64 0 0 64l96 128h62.1l106.6 106.6c-13.6 27.8-9.2 62.3 13.9 85.4l117.1 117.1c14.6 14.6 38.2 14.6 52.7 0l52.7-52.7c14.5-14.6 14.5-38.2 0-52.7zM331.7 225c28.3 0 54.9 11 74.9 31l19.4 19.4c15.8-6.9 30.8-16.5 43.8-29.5 37.1-37.1 49.7-89.3 37.9-136.7-2.2-9-13.5-12.1-20.1-5.5l-74.4 74.4-67.9-11.3L334 98.9l74.4-74.4c6.6-6.6 3.4-17.9-5.7-20.2-47.4-11.7-99.6.9-136.6 37.9-28.5 28.5-41.9 66.1-41.2 103.6l82.1 82.1c8.1-1.9 16.5-2.9 24.7-2.9zm-103.9 82l-56.7-56.7L18.7 402.8c-25 25-25 65.5 0 90.5s65.5 25 90.5 0l123.6-123.6c-7.6-19.9-9.9-41.6-5-62.7zM64 472c-13.2 0-24-10.8-24-24 0-13.3 10.7-24 24-24s24 10.7 24 24c0 13.2-10.7 24-24 24z"></path></svg></button>
+                    </div>
+                    <div class='charContainer'>
+                        <div id='stats' style='width:100%;'>
+
+                        </div>
+                        <div id='inv' style='display: none;'>
+                            <div class='effectDiv'>ZAB KBIR AWLAD L97AB</div>
+                            <div class="characterDiv">
+                                <center>
+                                    <img class="characterFollower" src='' />
+                                    <img class="characterDisplay" src='' style='margin-top: 20px;' />
+                                </center>
+
+                            </div>
+                            <table style='table-layout:fixed; position:relative; '>
+
+                                <tr>
+                                    <td style='background-image: url("./slots/tx_slotDofusimg.png"); background-size: 100%;'>
+                                        <img onerror="this.style.display='none'; this.classList.remove('item');" class='dofus1' src=''>
+                                    </td>
+                                    <td style='visibility:hidden;'></td>
+
+                                    <td style='visibility:hidden;'></td>
+                                    <td style='visibility:hidden;'></td>
+                                    <td style='visibility:hidden;'></td>
+
+                                    <td style='visibility:hidden;'></td>
+                                    <td style='background-image: url("./slots/tx_slotItem6img.png"); background-size: 100%;'>
+                                        <img onerror="this.style.display='none'; this.classList.remove('item');" class='hat' src=''>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td style='background-image: url("./slots/tx_slotDofusimg.png"); background-size: 100%;'>
+                                        <img onerror="this.style.display='none'; this.classList.remove('item');" class='dofus2' src=''>
+                                    </td>
+                                    <td style='visibility:hidden;'></td>
+                                    <td style='visibility:hidden;'></td>
+                                    <td style='visibility:hidden;'></td>
+                                    <td style='visibility:hidden;'></td>
+                                    <td style='visibility:hidden;'></td>
+                                    <td style='background-image: url("./slots/tx_slotItem1img.png"); background-size: 100%;'>
+                                        <img onerror="this.style.display='none'; this.classList.remove('item');" class='cac' src=''>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style='background-image: url("./slots/tx_slotDofusimg.png"); background-size: 100%;'>
+                                        <img onerror="this.style.display='none'; this.classList.remove('item');" class='dofus3' src=''>
+                                    </td>
+                                    <td style='visibility:hidden;'></td>
+                                    <td class='shieldEquipped' style='background:no-repeat; border:0;'></td>
+                                    <td style='visibility:hidden;'></td>
+                                    <td style='visibility:hidden;'></td>
+                                    <td style='visibility:hidden;'></td>
+                                    <td style='background-image: url("./slots/tx_slotItem15img.png"); background-size: 100%;'>
+                                        <img onerror="this.style.display='none'; this.classList.remove('item');" class='shield' src=''>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td style='background-image: url("./slots/tx_slotDofusimg.png"); background-size: 100%;'>
+                                        <img onerror="this.style.display='none'; this.classList.remove('item');" class='dofus4' src=''>
+                                    </td>
+                                    <td style='visibility:hidden;'></td>
+                                    <td style='visibility:hidden;'></td>
+                                    <td style='visibility:hidden;'></td>
+                                    <td style='visibility:hidden;'></td>
+                                    <td style='visibility:hidden;'></td>
+                                    <td style='background-image: url("./slots/tx_slotItem7img.png"); background-size: 100%;'>
+                                        <img onerror="this.style.display='none'; this.classList.remove('item');" class='cape' src=''>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style='background-image: url("./slots/tx_slotDofusimg.png"); background-size: 100%;'>
+                                        <img onerror="this.style.display='none'; this.classList.remove('item');" class='dofus5' src=''>
+                                    </td>
+                                    <td style='visibility:hidden;'></td>
+                                    <td style='visibility:hidden;'></td>
+                                    <td style='visibility:hidden;'></td>
+                                    <td style='visibility:hidden;'></td>
+                                    <td style='visibility:hidden;'></td>
+                                    <td style='background-image: url("./slots/tx_slotItem8img.png"); background-size: 100%;'>
+                                        <img onerror="this.style.display='none'; this.classList.remove('item');" class='pet' src=''>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td style='background-image: url("./slots/tx_slotDofusimg.png"); background-size: 100%;'>
+                                        <img onerror="this.style.display='none'; this.classList.remove('item');" class='dofus6' src=''>
+                                    </td>
+                                    <td style='background-image: url("./slots/tx_slotItem0img.png"); background-size: 100%;'>
+                                        <img onerror="this.style.display='none'; this.classList.remove('item');" class='necklace' src=''>
+                                    </td>
+                                    <td style='background-image: url("./slots/tx_slotItem2img.png"); background-size: 100%;'>
+                                        <img onerror="this.style.display='none'; this.classList.remove('item');" class='ring2' src=''>
+                                    </td>
+                                    <td style='background-image: url("./slots/tx_slotItem4img.png"); background-size: 100%;'>
+                                        <img onerror="this.style.display='none'; this.classList.remove('item');" class='ring1' src=''>
+                                    </td>
+                                    <td style='background-image: url("./slots/tx_slotItem3img.png"); background-size: 100%;'>
+                                        <img onerror="this.style.display='none'; this.classList.remove('item');" class='belt' src=''>
+                                    </td>
+                                    <td style='background-image: url("./slots/tx_slotItem5img.png"); background-size: 100%;'>
+                                        <img onerror="this.style.display='none'; this.classList.remove('item');" class='boots' src=''>
+                                    </td>
+                                    <td style='background-image: url("./slots/tx_slotItem16img.png"); background-size: 100%;'>
+                                        <img onerror="this.style.display='none'; this.classList.remove('item');" class='mount' src=''>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <div class='items'>
+
+                            </div>
+                        </div>
+                        <div id='spells' style='display: none;'>
+
+                        </div>
+                        <div id='jobs' style='display: none;'>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id='hdv' class='subContainer' style='display:none;'>
+                <!--<center><span class='warn' style='font-size:1vw;'>ATTENTION: La liste des objets en vente ne s'actualise que si l'HDV s'ouvre, ne vous attendez pas à une actualisation en temps réel.</span></center>-->
+                <button id="refreshHDV" class='action' style='position:absolute; top:0; right:0;' onclick='sendToMain("REFRESH_SHOP", {username: $("#username").html()})'><i class='fa fa-refresh'></i></button>
+                <table id='shopTable'>
+                    <thead>
+                        <td>UID</td>
+                        <td>Nom</td>
+                        <td>Quantité</td>
+                        <td>Prix de vente</td>
+                        <td>Délai d'éxpiration</td>
+                    </thead>
+
+                </table>
+            </div>
+            <div id='fight' class='subContainer' style='display:none; '>
+                <div>
+                    <div style='width:50%;'>
+
+                        <label class="radio">Mode automatique
+							  <input type="checkbox" id='auto' onchange = 'saveConfigFight($("#username").html())'>
+							  <span class="checkmark"></span>
+							</label>
+                        <label class="radio details m">Afficher les détails du combat dans la console
+							  <input type="checkbox" id='debug' onchange = 'saveConfigFight($("#username").html())'>
+							  <span class="checkmark"></span>
+							</label>
+                        <div class='manual'>
+                            <h1 style="color:var(--borders); text-align:left;">Mode manuel: </h1>
+
+                            <label class="radio">Passer le tour
+								  <input type="checkbox" id='skipTurn' onchange = 'saveConfigFight($("#username").html())'>
+								  <span class="checkmark"></span>
+								</label>
+                            <label class="radio">Combat CAC
+								  <input type="checkbox" id='berserker' onchange = 'saveConfigFight($("#username").html())'>
+								  <span class="checkmark"></span>
+								</label> Distance max: <input type='number' id='maxDistance' min='1' value='1' style='width:69px;' onchange='saveConfigFight($("#username").html())' /><br>
+                            <h1 style="color:var(--borders); text-align:left;">Ajouter une instruction: </h1>
+                            <div id='addInstruction'>
+                                <div id="spellsFight" style='width:90%; margin-bottom: 20px;'></div>
+                                <label class="radio">Lancer uniquement au CAC
+									  <input type="checkbox" id='cacOnly'>
+									  <span class="checkmark"></span>
+									</label> Cible: <select id='toCellId' style='width:50%;'>
+										<option value='enemy'>Enemie</option>
+										<option value='enemyNext'>Enemie adjacent</option>
+										<option value='self'>Soi-même</option>
+										<option value='selfNext'>Soi-même adjacent</option>
+										<option value='ally'>Allié</option>
+										<option value='allyNext'>Allié adjacent</option>
+									</select><br> Nombre de relance par tour: <input type='number' id='repeat' min='1' value='1' style='width:69px;' /><br>
+                                <button onclick='addInstruction($("#username").html())'>Ajouter</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style='width:50%;'>
+                        <label class="radio details nm">Afficher les détails du combat dans la console
+							  <input type="checkbox" id='debug' onchange = 'saveConfigFight($("#username").html())'>
+							  <span class="checkmark"></span>
+							</label>
+                        <div class='instr'>
+                            <h1 style="color:var(--borders); text-align:left;">Instructions: </h1>
+                            <div id='instructions'>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id='mapGrid' class='subContainer' style='display:none;'>
+                <table class='mapContainer'></table>
+                <div class='mapMetadata'>
+                    <ul style='height:33%;'>
+                        <li><i style='background-color: #ffa500;' class='circleMeta'></i>
+                            <p>Moi</p>
+                        </li>
+                        <li><i style='background-color: #8076d0;' class='circleMeta'></i>
+                            <p>Joueurs: <span style='font-weight:normal; color:white;' id='players'>-1</span></p>
+                        </li>
+                        <li><i style='background-color: #8B4513;' class='circleMeta'></i>
+                            <p>Marchands: <span style='font-weight:normal; color:white;' id='merchants'>-1</span></p>
+                        </li>
+                        <li><i style='background-color: #94b2b2;' class='circleMeta'></i>
+                            <p>PNJs: <span style='font-weight:normal; color:white;' id='npcs'>-1</span></p>
+                        </li>
+                        <li><i style='background-color: red;' class='circleMeta'></i>
+                            <p>Monstres: <span style='font-weight:normal; color:white;' id='monsters'>-1</span></p>
+                        </li>
+                        <li><i style='background-color: #00ffff;' class='circleMeta'></i>
+                            <p>Elements interactifs: <span style='font-weight:normal; color:white;' id='interactiveEls'>-1</span></p>
+                        </li>
+                    </ul>
+
+                    <center>
+                        <div style=' position:relative;'>
+                            <div style='width:calc(30vh - 70px); height:calc(30vh - 70px); position:relative; float:left;'>
+                                <button style='position:absolute; left:0; top:50%; margin-top:-22.5px;' class='move left action' onclick='moveToSide($("#username").html(), "left")' disabled><i class='fa fa-chevron-left'></i></button>
+                                <button style='position:absolute; left:50%; top:0; margin-left:-22.5px;' class='move top action' onclick='moveToSide($("#username").html(), "top")' disabled><i class='fa fa-chevron-up'></i></button>
+                                <button style='position:absolute; right:0; top:50%; margin-top:-22.5px;' class='move right action' onclick='moveToSide($("#username").html(), "right")' disabled><i class='fa fa-chevron-right'></i></button>
+                                <button style='position:absolute; left:50%; bottom:0; margin-left:-22.5px;' class='move bottom action' onclick='moveToSide($("#username").html(), "bottom")' disabled><i class='fa fa-chevron-down'></i></button>
+                            </div>
+                            <div style='float:right; margin-right:5px;'>
+                                <p>MAP ID: <span style='font-weight:normal; color:white;' id='mapid'>-1</span></p>
+                                <div class='mapUselessM'>
+                                    <p>CELL ID: <span style='font-weight:normal; color:white;' id='cellid'>-1</span></p>
+                                    <p>PLAYER / NPC / INTERACTIVE ID: <span style='font-weight:normal; color:white;' id='elid'>-1</span></p>
+                                    <span class='info' style='font-size:1vw; margin-left:50px;'>(Clique droit)</span></div>
+                            </div>
+                        </div>
+                    </center>
+
+                    <!--<div style='height:33%;'>
+							<p>MAP ID: <span style='font-weight:normal; color:white;' id='mapid'>-1</span></p>
+							<p>CELL ID: <span style='font-weight:normal; color:white;' id='cellid'>-1</span></p>
+							<p>PLAYER / NPC / INTERACTIVE ID: <span style='font-weight:normal; color:white;' id='elid'>-1</span></p>
+							<span class='info' style='font-size:1vw; margin-left:50px;'>(Clique droit)</span>
+						</div>-->
+                </div>
+            </div>
+            <div id='config' class='subContainer' style='display:none;'>
+                <div style='border-bottom:2px solid var(--borders); height:auto;'>
+                    <h1 style="color:var(--borders); text-align:left;">Connexion: </h1>
+                    <div class='configTop'>
+                        <div>
+                            Serveur: <select id="connectionServer" style='width:200px;' onchange='saveConfig($("#username").html())'>
+									<option value="auto">Automatique</option>
+									<option value="Herdegrize">Herdegrize</option>
+									<option value="Terra Cogita">Terra Cogita</option>
+									<option value="Oshimo">Oshimo</option>
+									<option value="Brutas">Brutas</option>
+									<option value="Grandapan">Grandapan</option>
+									<option value="Dodge">Dodge</option>
+								</select>
+                        </div>
+                        <div>
+                            Personnage: <input type='text' id="character" placeholder='(Laisser vide pour une selection automatique).' style='width:350px;' onfocusout='saveConfig($("#username").html())'>
+                        </div>
+                    </div><br>
+                    <center>
+                        <div id='createCharacterContainer' style='display:inline;'>
+                            Créer un nouveau personnage: <select id="newCharacter" style='margin-left:10px; width:150px;'>
+									<option value="1">Féca</option>
+									<option value="2">Osamodas</option>
+									<option value="3">Enutrof</option>
+									<option value="4">Sram</option>
+									<option value="5">Xélor</option>
+									<option value="6">Ecaflip</option>
+									<option value="7">Eniripsa</option>
+									<option value="8">Iop</option>
+									<option value="9">Crâ</option>
+									<option value="10">Sadida</option>
+									<option value="11">Sacrieur</option>
+									<option value="12">Pandawa</option>
+									<option value="13">Roublard</option>
+									<option value="14">Zobal</option>
+									<option value="15">Steamer</option>
+								</select>
+                        </div>
+                        <button id='createCharacterButton' onclick='createCharacter($("#username").html(), parseInt($("#newCharacter").val()))'>Créer</button>
+                    </center>
+                </div>
+                <div class='configBot'>
+                    <div style='width:50%;'>
+                        <h1 style="color:var(--borders); text-align:left;">Divers: </h1>
+                        <div id='channelsFilter'>
+                            <label class="radio">Commerce
+								  <input type="checkbox" value='5'  onchange = 'saveConfig($("#username").html())'>
+								  <span class="checkmark"></span>
+								</label>
+                            <label class="radio">Recrutement
+								  <input type="checkbox" value='6'  onchange = 'saveConfig($("#username").html())'>
+								  <span class="checkmark"></span>
+								</label>
+                            <label class="radio">Débutant
+								  <input type="checkbox" value='7'  onchange = 'saveConfig($("#username").html())'>
+								  <span class="checkmark"></span>
+								</label>
+                            <label class="radio">Privé
+								  <input type="checkbox" value='9' onchange = 'saveConfig($("#username").html())'>
+								  <span class="checkmark"></span>
+								</label>
+                            <label class="radio">Général
+								  <input type="checkbox" value='0' onchange = 'saveConfig($("#username").html())'>
+								  <span class="checkmark"></span>
+								</label>
+                        </div>
+                        <br>
+                        <label class="radio">Speedhack
+							  <input type="checkbox" id='speedhack' onchange = 'saveConfig($("#username").html())'>
+							  <span class="checkmark"></span>
+							</label>
+                        <label class="radio">Anti-modo
+							  <input type="checkbox" id='antimod' onchange = 'saveConfig($("#username").html())'>
+							  <span class="checkmark"></span>
+							</label> Retour en banque: <input type='number' id='bank' min='0' value='0' style='width: 69px;' onchange='saveConfig($("#username").html())' />%<br> PDV avant lancement de combat: <input type='number' id='minLP' min="1"
+                            value='0' style='width: 69px;' onchange='saveConfig($("#username").html())' />%
+                    </div>
+
+                    <div style='width:50%;'>
+                        <h1 style="color:var(--borders); text-align:left;">Proxies: </h1>
+                        <input type='text' id='proxyIp' placeholder='IP' style='width:calc(80% - 5px);' onfocusout='saveConfig($("#username").html())' /> <input type='text' id='proxyPort' placeholder='Port' style='width:20%;' onfocusout='saveConfig($("#username").html())'
+                        />
+
+                        <input type='text' id='proxyUser' placeholder="Nom d'utilisateur (Optionnel)" onfocusout='saveConfig($("#username").html())' />
+                        <input type='text' id='proxyPass' placeholder='Mot de passe (Optionnel)' onfocusout='saveConfig($("#username").html())' />
+                        <center>
+                            <label class="radio" style='display:inline-block;'>Off
+								  <input type="radio" id='proxyOff' name="proxySwitch" value='0' onchange = 'saveConfig($("#username").html())'>
+								  <span class="checkmark"></span>
+								</label>
+                            <label class="radio" style='margin-left: 150px; display:inline-block;'>On
+								  <input type="radio" id='proxyOn' name="proxySwitch" value='1' onchange = 'saveConfig($("#username").html())'>
+								  <span class="checkmark"></span>
+								</label>
+                        </center>
+                    </div>
+
+                    <div style='width:50%;'>
+
+                    </div>
+                    <div style='width:50%; margin-top:-40px;'>
+                        <h1 style="color:var(--borders); text-align:left;">Echanges: </h1>
+                        <input type='text' id='exchangePass' placeholder='Mot de passe' onfocusout='saveConfig($("#username").html())' />
+                        <center>
+                            <label class="radio" style='display:inline-block;'>Off
+								  <input type="radio" id='exchangeOff' name="exchangeSwitch" value='0' onchange = 'saveConfig($("#username").html())'>
+								  <span class="checkmark"></span>
+								</label>
+                            <label class="radio" style='margin-left: 150px; display:inline-block;'>On
+								  <input type="radio" id='exchangeOn' name="exchangeSwitch" value='1' onchange = 'saveConfig($("#username").html())'>
+								  <span class="checkmark"></span>
+								</label>
+                        </center>
+                    </div>
+                </div>
+            </div>
+
+            <div id='subMenu'>
+                <button id='dataB' onclick="switchDiv($('#username').html(), $(this).attr('id').replace('B', ''))" class='action active'><i class="fa fa-terminal"></i></button>
+                <button id='charB' onclick="switchDiv($('#username').html(), $(this).attr('id').replace('B', ''))" class='action' disabled><i class="fa fa-user"></i></button>
+                <button id='hdvB' onclick="switchDiv($('#username').html(), $(this).attr('id').replace('B', ''))" class='action' disabled><i class="fa fa-shopping-cart"></i></button>
+                <button id='fightB' onclick="switchDiv($('#username').html(), $(this).attr('id').replace('B', ''))" class='action' disabled><svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width='20' height='20' style='margin-top: 4px;'><path fill="currentColor" d="M309.37 389.38l80-80L93.33 13.33 15.22.14C6.42-1.12-1.12 6.42.14 15.22l13.2 78.11 296.03 296.05zm197.94 72.68L448 402.75l31.64-59.03c3.33-6.22 2.2-13.88-2.79-18.87l-17.54-17.53c-6.25-6.25-16.38-6.25-22.63 0L307.31 436.69c-6.25 6.25-6.25 16.38 0 22.62l17.53 17.54a16 16 0 0 0 18.87 2.79L402.75 448l59.31 59.31c6.25 6.25 16.38 6.25 22.63 0l22.62-22.62c6.25-6.25 6.25-16.38 0-22.63zm-8.64-368.73l13.2-78.11c1.26-8.8-6.29-16.34-15.08-15.08l-78.11 13.2-140.05 140.03 80 80L498.67 93.33zm-345.3 185.3L100 332l-24.69-24.69c-6.25-6.25-16.38-6.25-22.62 0l-17.54 17.53a15.998 15.998 0 0 0-2.79 18.87L64 402.75 4.69 462.06c-6.25 6.25-6.25 16.38 0 22.63l22.62 22.62c6.25 6.25 16.38 6.25 22.63 0L109.25 448l59.03 31.64c6.22 3.33 13.88 2.2 18.87-2.79l17.53-17.54c6.25-6.25 6.25-16.38 0-22.62L180 412l53.37-53.37-80-80z" class=""></path></svg></button>
+                <button id='mapGridB' onclick="switchDiv($('#username').html(), $(this).attr('id').replace('B', ''))" class='action' disabled><i class="fa fa-map"></i></button>
+                <button id='configB' onclick="switchDiv($('#username').html(), $(this).attr('id').replace('B', ''))" class='action'><i class="fa fa-gear"></i></button>
+
+                <hr style='border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), var(--borders), rgba(0, 0, 0, 0)); margin: 25px 0 25px 0;'>
+
+                <button id='sitB' onclick="sendToMain('SIT', {username: $('#username').html()})" class='action' disabled><svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width='20' height='20' style='margin-top: 4px; margin-left: 2px;'><path fill="currentColor" d="M112 128c0-29.5 16.2-55 40-68.9V256h48V48h48v208h48V59.1c23.8 13.9 40 39.4 40 68.9v128h48V128C384 57.3 326.7 0 256 0h-64C121.3 0 64 57.3 64 128v128h48zm334.3 213.9l-10.7-32c-4.4-13.1-16.6-21.9-30.4-21.9H42.7c-13.8 0-26 8.8-30.4 21.9l-10.7 32C-5.2 362.6 10.2 384 32 384v112c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V384h256v112c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V384c21.8 0 37.2-21.4 30.3-42.1z" class=""></path></svg></button>
+                <button id='quitB' onclick="sendToMain('QUIT_FIGHT', {username: $('#username').html()})" class='action' disabled><i class='fa fa-flag'></i></button>
+                <button id='leaveB' onclick="sendToMain('LEAVE_DIALOG', {username: $('#username').html()})" class='action' disabled><i class='fa fa-long-arrow-left'></i></button>
+
+
+            </div>
+
+
+
+            <form id='chatDiv'>
+                <input type='text' placeholder='Message' id='chat' />
+                <button id='sendButton' onclick='sendChat($("#username").html());' disabled>Envoyer</button>
+            </form>
+
+            <div id='botFooter'>
+                <div class='meter' id='health'>
+
+                    <span style="width: 0%"></span>
+                    <p>0 / 0</p>
+                    <i class='fa fa-heart fa-2x' style='right:5px; top:1px; position:absolute; color:red;'></i>
+                    <i class='fa fa-heart m' style='right:5px; top:1px; position:absolute; color:red;'></i>
+                </div>
+                <div class='meter' id='exp'>
+
+                    <span style="width: 0%"></span>
+                    <p>0%</p>
+                    <i class='fa fa-star fa-2x' style='right:5px; top:1px; position:absolute; color:#0F52BA'></i>
+                    <i class='fa fa-star m' style='right:5px; top:1px; position:absolute; color:#0F52BA'></i>
+                </div>
+                <div class='meter' id='energy'>
+                    <span style="width: 0%"></span>
+                    <p>0 / 0</p>
+                    <i class='fa fa-bolt fa-2x' style='right:5px; top:1px; position:absolute; color:#FFFF33;'></i>
+                    <i class='fa fa-bolt m' style='right:5px; top:1px; position:absolute; color:#FFFF33;'></i>
+                </div>
+                <div class='meter' id='weight'>
+                    <span style="width: 0%"></span>
+                    <p>0 / 0</p>
+                    <i class='fa fa-briefcase fa-2x' style='right:5px; top:1px; position:absolute; color:#D2691E;'></i>
+                    <i class='fa fa-briefcase m' style='right:5px; top:1px; position:absolute; color:#D2691E;'></i>
+                </div>
+                <div class='kamas'>
+                    <p><span style='vertical-align:middle;' id='kamas'>-1</span> <img src='./slots/kama.png' style='width:20px; vertical-align:middle;'></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src='window.js'></script>
+
+</body>
+
+
+</html>

@@ -1,0 +1,121 @@
+{
+  "0": {
+    "id": 0,
+    "nameId": "Général",
+    "descriptionId": "Affiche / Cache les messages communs.\n\nIl est interdit de vendre à la criée sur ce canal, si votre personnage ne se situe pas sur une des places marchandes du jeu.\n\nAttention, ce canal est modéré, si vous l'utilisez de façon inappropriée, et si vous ne respectez pas les règles, vous serez sanctionné.",
+    "shortcut": "/s",
+    "shortcutKey": "toggleChannelGlobal",
+    "isPrivate": false,
+    "allowObjects": false
+  },
+  "1": {
+    "id": 1,
+    "nameId": "Équipe",
+    "shortcut": "/t",
+    "shortcutKey": "toggleChannelTeam",
+    "isPrivate": false,
+    "allowObjects": true
+  },
+  "2": {
+    "id": 2,
+    "nameId": "Guilde",
+    "descriptionId": "Affiche / Cache les messages de guilde.\n\nCe canal vous permet de dialoguer avec les membres de votre guilde.",
+    "shortcut": "/g",
+    "shortcutKey": "toggleChannelGuild",
+    "isPrivate": false,
+    "allowObjects": true
+  },
+  "3": {
+    "id": 3,
+    "nameId": "Alliance",
+    "descriptionId": "Affiche / Cache les messages d'alliance.\n\nCe canal vous permet de dialoguer avec les membres de votre alliance.",
+    "shortcut": "/a",
+    "shortcutKey": "toggleChannelAlliance",
+    "isPrivate": false,
+    "allowObjects": false
+  },
+  "4": {
+    "id": 4,
+    "nameId": "Groupe",
+    "shortcut": "/p",
+    "shortcutKey": "toggleChannelParty",
+    "isPrivate": false,
+    "allowObjects": true
+  },
+  "5": {
+    "id": 5,
+    "nameId": "Commerce",
+    "descriptionId": "Affiche / Cache les messages de commerce.\n\nCe canal vous permet de consulter les offres de vente faîtes dans votre zone, et de vendre vos objets à tous les joueurs présents dans votre zone.\nCe canal est soumis à des règles très strictes, vous devez lier vos objets dans vos messages de vente pour améliorer la lisibilité de ce canal.\nUn objet peut-être lié dans un canal en utilisant le menu contextuel \"Insérer dans le chat\" qui est disponible sur les objets.\n\nAttention, ce canal est modéré, si vous l'utilisez de façon inappropriée, et si vous ne respectez pas les règles, vous serez sanctionné.",
+    "shortcut": "/b",
+    "shortcutKey": "toggleChannelSales",
+    "isPrivate": false,
+    "allowObjects": true
+  },
+  "6": {
+    "id": 6,
+    "nameId": "Recrutement",
+    "descriptionId": "Affiche / Cache les messages de recrutement.\n\nCe canal vous permet de trouver des compagnons afin de créer ou de rejoindre un groupe d'aventuriers.\nCe canal permet également de recruter de nouveaux membres pour votre guilde, ou de rejoindre une guilde.\n\nAttention, ce canal est modéré, si vous l'utilisez de façon inappropriée, et si vous ne respectez pas les règles, vous serez sanctionné.",
+    "shortcut": "/r",
+    "shortcutKey": "toggleChannelSeek",
+    "isPrivate": false,
+    "allowObjects": false
+  },
+  "7": {
+    "id": 7,
+    "nameId": "Débutants",
+    "descriptionId": "Affiche / Cache les messages du canal des débutants.\n\nCe canal permet de rencontrer, d'aider, et de discuter avec les autres joueurs présents dans la zone d'Incarnam.\nVous devez utiliser le canal de commerce si vous voulez vendre ou acheter des objets.\nVous devez utiliser le canal de recherche de groupe, si vous recherchez d'autres joueurs.\n\nAttention, ce canal est modéré, si vous l'utilisez de façon inappropriée, et si vous ne respectez pas les règles, vous serez sanctionné.",
+    "shortcut": "/i",
+    "shortcutKey": "null",
+    "isPrivate": false,
+    "allowObjects": false
+  },
+  "8": {
+    "id": 8,
+    "nameId": "Administrateurs",
+    "shortcut": "/q",
+    "shortcutKey": "null",
+    "isPrivate": false,
+    "allowObjects": true
+  },
+  "9": {
+    "id": 9,
+    "nameId": "Privé",
+    "shortcut": "/w",
+    "shortcutKey": "null",
+    "isPrivate": true,
+    "allowObjects": true
+  },
+  "10": {
+    "id": 10,
+    "nameId": "Informations",
+    "shortcut": "null",
+    "shortcutKey": "null",
+    "isPrivate": true,
+    "allowObjects": true
+  },
+  "11": {
+    "id": 11,
+    "nameId": "Combat",
+    "shortcut": "null",
+    "shortcutKey": "toggleChannelFight",
+    "isPrivate": true,
+    "allowObjects": true
+  },
+  "12": {
+    "id": 12,
+    "nameId": "Promotion",
+    "descriptionId": "Affiche / Cache les infos promotionelles.\n\nCe canal vous informe sur l'actualité d'Ankama : les évennements à ne pas rater, les dernières nouveautés à découvrir, etc",
+    "shortcut": "null",
+    "shortcutKey": "toggleChannelAds",
+    "isPrivate": false,
+    "allowObjects": true
+  },
+  "13": {
+    "id": 13,
+    "nameId": "Kolizéum",
+    "shortcut": "/k",
+    "shortcutKey": "toggleChannelArena",
+    "isPrivate": false,
+    "allowObjects": true
+  }
+}

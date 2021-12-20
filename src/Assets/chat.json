@@ -1,0 +1,72 @@
+[
+    {
+        "id": "0",
+        "nameId": "Général",
+        "shortcut": "/s"
+    },
+    {
+        "id": "1",
+        "nameId": "Équipe",
+        "shortcut": "/t"
+    },
+    {
+        "id": "2",
+        "nameId": "Guilde",
+        "shortcut": "/g"
+    },
+    {
+        "id": "3",
+        "nameId": "Alliance",
+        "shortcut": "/a"
+    },
+    {
+        "id": "4",
+        "nameId": "Groupe",
+        "shortcut": "/p"
+    },
+    {
+        "id": "5",
+        "nameId": "Commerce",
+        "shortcut": "/b"
+    },
+    {
+        "id": "6",
+        "nameId": "Recrutement",
+        "shortcut": "/r"
+    },
+    {
+        "id": "7",
+        "nameId": "Débutants",
+        "shortcut": "/i"
+    },
+    {
+        "id": "8",
+        "nameId": "Administrateurs",
+        "shortcut": "/q"
+    },
+    {
+        "id": "9",
+        "nameId": "Privé",
+        "shortcut": "/w"
+    },
+    {
+        "id": "10",
+        "nameId": "Informations",
+        "shortcut": "null"
+    },
+    {
+        "id": "11",
+        "nameId": "Combat",
+        "shortcut": "null"
+    },
+    {
+        "id": "12",
+        "nameId": "Promotion",
+        "shortcut": "null"
+    },
+    {
+        "id": "13",
+        "nameId": "Kolizéum",
+        "shortcut": "/k"
+    }
+]

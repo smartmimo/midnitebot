@@ -1,0 +1,6 @@
+export default (function(e, t) {
+    function i(e, t, i, n, o, a) {
+        this.sx = e, this.sy = t, this.r = i, this.g = n, this.b = o, this.a = a
+    }
+    t.empty = new i(.1, .1, .5, .5, .5, 0), t.fullRed = new i(.78, .78, .8, .12, .08, .8), t.fullGreen = new i(.78, .78, 0, 1, .22, .7), t.fullBlue = new i(.78, .78, 0, .51, .91, .8), t.walkable = new i(.9, .9, 1, .92, 0, .5), t.unwalkable = new i(.9, .9, .9, 0, 0, .8), t.walkableLast = new i(.9, .9, 1, 1, 0, .8), t.inSight = new i(.78, .78, 0, 0, 1, .5), t.outSight = new i(.78, .78, .6, .6, 1, .5), t.areaOfEffect = new i(.78, .78, 1, 0, 0, .9), t.inSightEnemyTurn = new i(.78, .78, .3, .3, .3, .8), t.outSightEnemyTurn = new i(.78, .78, .5, .5, .5, .7), t.areaOfEffectEnemyTurn = new i(.78, .78, 1, 1, 1, 1), t.blueTeamStart = new i(1, 1, 0, 0, 1, .5), t.blueTeamEnd = new i(.95, 1, .1, .4, .8, .45), t.redTeamStart = new i(1, 1, 1, 0, 0, .5), t.redTeamEnd = new i(.95, 1, .8, .4, .1, .45), t.walkArea = new i(1, 1, 0, .9, .02, .3), t.walkAreaRequiresAP = new i(1, 1, 0, .43, .4, .4), t.walkAreaRestricted = new i(1, 1, 1, 0, 0, .4), t.enemyWalkArea = new i(1, 1, .1, .9, .032, .6), t.enemyWalkAreaRequiresAP = new i(1, 1, .1, .435, .4, .6), t.enemyWalkAreaRestricted = new i(.9, .9, 1, 0, 0, .6), t.TransformState = i
+})

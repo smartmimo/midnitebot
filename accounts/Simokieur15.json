@@ -1,0 +1,41 @@
+{
+    "password": "0123456789simo",
+    "config": {
+        "enabledChannels": [
+            5,
+            6,
+            7,
+            9,
+            0
+        ],
+        "proxy": {
+            "proxyString": ":",
+            "enabled": false
+        },
+        "exchange": {
+            "pass": "",
+            "enabled": false
+        },
+        "bank": 80,
+        "speedhack": true,
+        "minLP": 80,
+        "antimod": true,
+        "autoSelectServer": true,
+        "server": "",
+        "autoSelectCharacter": true,
+        "character": "",
+        "autoUpgradeCharac": {},
+        "autoUpgradeSpells": {}
+    },
+    "fightConfig": {
+        "auto": true,
+        "spellsToUse": [],
+        "berserker": false,
+        "maxDistance": 12,
+        "skipTurn": false,
+        "debug": true,
+        "instructions": {}
+    },
+    "username": "Simokieur15",
+    "scriptPath": "./scripts/mineur_1-200.js"
+}

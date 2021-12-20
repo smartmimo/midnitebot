@@ -1,0 +1,55 @@
+{
+    "password": "aspirine12",
+    "config": {
+        "enabledChannels": [
+            9,
+            0
+        ],
+        "proxy": {
+            "proxyString": "mrlerandom:mah4ahHo@154.51.38.208:2021",
+            "enabled": false
+        },
+        "exchange": {
+            "pass": "zab",
+            "enabled": false
+        },
+        "bank": 80,
+        "speedhack": true,
+        "minLP": 0,
+        "antimod": true,
+        "autoSelectServer": false,
+        "server": "Terra Cogita",
+        "autoSelectCharacter": true,
+        "character": "",
+        "autoUpgradeCharac": {
+            "5": 14
+        },
+        "autoUpgradeSpells": {
+            "5": [
+                84
+            ]
+        }
+    },
+    "fightConfig": {
+        "auto": true,
+        "spellsToUse": [],
+        "berserker": false,
+        "maxDistance": 12,
+        "skipTurn": false,
+        "debug": true,
+        "instructions": {
+            "5": [
+                {
+                    "spellId": 83,
+                    "name": "Aiguille",
+                    "cacOnly": false,
+                    "toCellId": "enemy",
+                    "toCellIdText": "Enemie",
+                    "repeat": 2
+                }
+            ]
+        }
+    },
+    "username": "Midnite5682",
+    "scriptPath": "./scripts/paysan bl.js"
+}

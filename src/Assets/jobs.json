@@ -1,0 +1,138 @@
+{
+    "1": {
+        "name": "Base",
+        "icon": -1
+    },
+    "2": {
+        "name": "Bûcheron",
+        "icon": 1
+    },
+    "11": {
+        "name": "Forgeur d'Epées",
+        "icon": 10
+    },
+    "13": {
+        "name": "Sculpteur d'Arcs",
+        "icon": 6
+    },
+    "14": {
+        "name": "Forgeur de Marteaux",
+        "icon": 11
+    },
+    "15": {
+        "name": "Cordonnier",
+        "icon": 5
+    },
+    "16": {
+        "name": "Bijoutier",
+        "icon": 15
+    },
+    "17": {
+        "name": "Forgeur de Dagues",
+        "icon": 9
+    },
+    "18": {
+        "name": "Sculpteur de Bâtons",
+        "icon": 8
+    },
+    "19": {
+        "name": "Sculpteur de Baguettes",
+        "icon": 7
+    },
+    "20": {
+        "name": "Forgeur de Pelles",
+        "icon": 12
+    },
+    "24": {
+        "name": "Mineur",
+        "icon": 13
+    },
+    "25": {
+        "name": "Boulanger",
+        "icon": 3
+    },
+    "26": {
+        "name": "Alchimiste",
+        "icon": 14
+    },
+    "27": {
+        "name": "Tailleur",
+        "icon": 20
+    },
+    "28": {
+        "name": "Paysan",
+        "icon": 18
+    },
+    "31": {
+        "name": "Forgeur de Haches",
+        "icon": 19
+    },
+    "36": {
+        "name": "Pêcheur",
+        "icon": 30
+    },
+    "41": {
+        "name": "Chasseur",
+        "icon": 32
+    },
+    "43": {
+        "name": "Forgemage de Dagues",
+        "icon": 21
+    },
+    "44": {
+        "name": "Forgemage d'Epées",
+        "icon": 24
+    },
+    "45": {
+        "name": "Forgemage de Marteaux",
+        "icon": 25
+    },
+    "46": {
+        "name": "Forgemage de Pelles",
+        "icon": 26
+    },
+    "47": {
+        "name": "Forgemage de Haches",
+        "icon": 23
+    },
+    "48": {
+        "name": "Sculptemage d'Arcs",
+        "icon": 28
+    },
+    "49": {
+        "name": "Sculptemage de Baguettes",
+        "icon": 29
+    },
+    "50": {
+        "name": "Sculptemage de Bâtons",
+        "icon": 22
+    },
+    "56": {
+        "name": "Boucher",
+        "icon": 33
+    },
+    "58": {
+        "name": "Poissonnier",
+        "icon": 31
+    },
+    "60": {
+        "name": "Façonneur",
+        "icon": 40
+    },
+    "62": {
+        "name": "Cordomage",
+        "icon": 36
+    },
+    "63": {
+        "name": "Joaillomage",
+        "icon": 37
+    },
+    "64": {
+        "name": "Costumage",
+        "icon": 35
+    },
+    "65": {
+        "name": "Bricoleur",
+        "icon": 34
+    }
+}

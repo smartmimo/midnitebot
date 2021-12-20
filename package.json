@@ -1,0 +1,52 @@
+{
+    "name": "MidniteBot",
+    "version": "0.0.5",
+    "description": "Your everyday dofus touch bot.",
+    "main": "./main.js",
+    "scripts": {
+        "start": "node --expose-gc main.js"
+    },
+    "keywords": [],
+    "author": "Endless sprite",
+    "license": "ISC",
+    "dependencies": {
+        "bson": "^4.3.0",
+        "chalk": "^4.1.1",
+        "cloudscraper": "^4.6.0",
+        "cookie-parser": "^1.4.5",
+        "ejs": "^3.1.6",
+        "express": "^4.17.1",
+        "got": "^11.8.2",
+        "https-proxy-agent": "^5.0.0",
+        "javascript-obfuscator": "^2.19.0",
+        "luxon": "^1.26.0",
+        "ping": "^0.4.1",
+        "primus": "^8.0.2",
+        "readline-sync": "^1.4.10",
+        "request": "^2.88.2",
+        "tcp-ping": "^0.1.1",
+        "uglify-js": "^3.14.3",
+        "winston": "^3.3.3",
+        "ws": "^7.4.5"
+    },
+    "pkg": {
+        "scripts": [
+            "./src/Plugins/**/*",
+            "./src/Plugins/*",
+            "./src/**/*.js",
+            "./node_modules/primus/**/*.js"
+        ],
+        "assets": [
+            "./src/Public/**/*",
+            "./src/Plugins/*",
+            "./src/Plugins/**/*",
+            "./node_modules/primus/*.json",
+            "./src/Loaders/scriptHeader.js"
+        ],
+        "targets": [
+            "node16-win-x64"
+        ],
+        "outputPath": "dist"
+    },
+    "bin": "./main.js"
+}
